@@ -1,10 +1,13 @@
-<h1>All our flats</h1>
-
-<% @flats.each do |flat| %>
-  <div>
-    <h3><%= flat.name %></h3>
-    <p><%= flat.address %></p>
-    <p><%= flat.number_of_guests %></p>
-    <p><%= flat.price_per_night %></p>
+<div class="container">
+  <h1>All our flats</h1>
+  <div class="cards-container">
+    <% @flats.each do |flat| %>
+      <div class="card">
+        <h3><%= flat.name %></h3>
+        <p><%= flat.address %></p>
+        <p><%= flat.number_of_guests %></p>
+        <p><%= flat.price_per_night %></p>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

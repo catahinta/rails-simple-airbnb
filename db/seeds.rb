@@ -7,12 +7,26 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-4.times do
+
+puts "Destroying all flats"
+Flat.destroy_all
+
+Flat.create!(
+  name: 'Light & Spacious Garden Flat London',
+  address: '10 Clifton Gardens London W9 1DT',
+  description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
+  price_per_night: 75,
+  number_of_guests: 3
+)
+puts "Flat created"
+
+15.times do
   Flat.create!(
-    name: 'Light & Spacious Garden Flat London',
-    address: '10 Clifton Gardens London W9 1DT',
-    description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
+    name: Faker::Creature::Animal.name,
+    address: Faker::Travel::TrainStation.name(region: 'united_kingdom', type: 'metro'),
+    description: Faker::TvShows::BrooklynNineNine.quote,
     price_per_night: 75,
     number_of_guests: 3
   )
+  puts "Flat created"
 end
